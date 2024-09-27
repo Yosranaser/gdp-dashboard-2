@@ -1,6 +1,7 @@
 streamlit
 pandas
+scikit-learn
 matplotlib
 seaborn
-chardet
-scikit-learn  # Specify your required version
+pickle5
+rarfile
