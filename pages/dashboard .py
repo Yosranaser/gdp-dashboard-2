@@ -9,10 +9,10 @@ with open('kmeans_model.pkl', 'rb') as file:
     kmeans_model = pickle.load(file)
 
 # Load your dataset (you can replace this with the actual dataset path)
-# data = pd.read_csv('/mnt/data/atm_dataset.csv')
+# data = pd.read_csv('data.csv.zip')
 
 # Streamlit layout with three columns
-st.title("ATM Services Dashboard")
+st.title("customer segemenation dashboard")
 
 col1, col2, col3 = st.columns(3)
 
@@ -20,7 +20,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.header("Cluster vs Feature1")
     plt.figure(figsize=(5, 4))
-    sns.scatterplot(x=data['lat'], y=data['lng'], hue=kmeans_model.labels_, palette='viridis')
+    sns.scatterplot(x=data['Quantity'], y=data['Country'], hue=kmeans_model.labels_, palette='viridis')
     plt.title('Location Clusters')
     st.pyplot(plt)
 
@@ -28,7 +28,7 @@ with col1:
 with col2:
     st.header("Services Distribution")
     plt.figure(figsize=(5, 4))
-    service_counts = data['services'].value_counts()
+    service_counts = data['Quantity'].value_counts()
     sns.barplot(x=service_counts.index, y=service_counts.values)
     plt.xticks(rotation=90)
     plt.title('Distribution of Services')
