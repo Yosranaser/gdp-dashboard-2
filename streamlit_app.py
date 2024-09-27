@@ -9,12 +9,6 @@ import sklearn
 st.title("KMeans Model Predictor")
 st.image("Customer-Segmentation.png", caption="Customer-Segmentation", use_column_width=True)
 
-# Load the model
-model = load_model()
-if model:
-    st.write("Model loaded successfully!")
-else:
-    st.stop()  # Stop execution if model couldn't be loaded
 # Sidebar for input
 st.sidebar.title("Input Data")
 
