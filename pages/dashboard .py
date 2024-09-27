@@ -8,7 +8,10 @@ import seaborn as sns
 with open('kmeans_model.pkl', 'rb') as file:
     kmeans_model = pickle.load(file)
 
+# Load your dataset (replace with the actual dataset path)
+df = pd.read_csv('data.rar')  # Ensure the correct dataset is being loaded
 
 # Streamlit layout with three columns
 st.title("Customer Segmentation Dashboard")
+
 
