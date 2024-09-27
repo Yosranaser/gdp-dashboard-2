@@ -8,17 +8,17 @@ import seaborn as sns
 with open('kmeans_model.pkl', 'rb') as file:
     kmeans_model = pickle.load(file)
 
-# Load your dataset (you can replace this with the actual dataset path)
-# data = pd.read_csv('data.csv.zip')
+# Load your dataset (replace with the actual dataset path)
+df = pd.read_csv('data.csv')  # Ensure the correct dataset is being loaded
 
 # Streamlit layout with three columns
-st.title("customer segemenation dashboard")
+st.title("Customer Segmentation Dashboard")
 
 col1, col2, col3 = st.columns(3)
 
 # Plot 1: First column (e.g., cluster vs feature1)
 with col1:
-    st.header("Cluster vs Feature1")
+    st.header("Cluster vs Quantity")
     plt.figure(figsize=(5, 4))
     sns.scatterplot(x=df['Quantity'], y=df['Country'], hue=kmeans_model.labels_, palette='viridis')
     plt.title('Location Clusters')
@@ -38,6 +38,6 @@ with col2:
 with col3:
     st.header("Clusters by Area")
     plt.figure(figsize=(5, 4))
-    sns.countplot(x=kmeans_model.labels_, data=data)
-    plt.title('Number of ATMs per Cluster')
+    sns.countplot(x=kmeans_model.labels_, data=df)
+    plt.title('Number of Customers per Cluster')
     st.pyplot(plt)
