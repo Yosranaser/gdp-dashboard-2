@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import rarfile
 import os
-! pip install rarfile
+
 
 # Load the KMeans model
-with open('kmeans_model.pkl', 'rb') as file:
+with open('kmeans_model (1).pkl', 'rb') as file:
     kmeans_model = pickle.load(file)
 # Path to the .rar file
 rar_path = 'data.rar'
