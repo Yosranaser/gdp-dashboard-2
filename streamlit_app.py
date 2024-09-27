@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 from sklearn.cluster import KMeans
 import sklearn
-pip install scikit-learn
+! pip install scikit-learn
 st.title("KMeans Model Predictor")
 st.image("Customer-Segmentation.png", caption="Customer-Segmentation", use_column_width=True)
 
