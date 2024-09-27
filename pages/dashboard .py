@@ -20,7 +20,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.header("Cluster vs Feature1")
     plt.figure(figsize=(5, 4))
-    sns.scatterplot(x=data['Quantity'], y=data['Country'], hue=kmeans_model.labels_, palette='viridis')
+    sns.scatterplot(x=df['Quantity'], y=df['Country'], hue=kmeans_model.labels_, palette='viridis')
     plt.title('Location Clusters')
     st.pyplot(plt)
 
@@ -28,7 +28,7 @@ with col1:
 with col2:
     st.header("Services Distribution")
     plt.figure(figsize=(5, 4))
-    service_counts = data['Quantity'].value_counts()
+    service_counts = df['Quantity'].value_counts()
     sns.barplot(x=service_counts.index, y=service_counts.values)
     plt.xticks(rotation=90)
     plt.title('Distribution of Services')
